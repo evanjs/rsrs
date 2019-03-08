@@ -1,19 +1,26 @@
 use serde_derive::*;
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Quest {
-    title: String,
-    status: String,
-    difficulty: i64,
-    members: bool,
+    pub title: String,
+    pub status: Status,
+    pub difficulty: i64,
+    pub members: bool,
     #[serde(rename = "questPoints")]
-    quest_points: i64,
+    pub quest_points: i64,
     #[serde(rename = "userEligible")]
-    user_eligible: bool,
+    pub user_eligible: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Quests {
-    quests: Vec<Quest>,
+    pub quests: Vec<Quest>,
     #[serde(rename = "loggedIn")]
-    logged_in: String,
+    pub logged_in: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub enum Status {
+    COMPLETED,
+    NOT_STARTED,
+    STARTED
 }
