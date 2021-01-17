@@ -1,3 +1,1 @@
-pub mod profile;
-pub mod quest;
-pub mod skills;
+pub mod config;

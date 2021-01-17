@@ -4,9 +4,13 @@
     name = "rust-env";
     buildInputs = [
         # Additional Dependencies
-        pkgconfig openssl
+        openssl
+    ];
+
+    nativeBuildInputs = [ 
+      pkg-config
     ];
 
     # Environment Variables
-    RUST_BACKTRACE=1;
+    # RUST_BACKTRACE=1
   }
