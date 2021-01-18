@@ -84,7 +84,7 @@ mod tests {
     #[async_std::test]
     async fn test_profile() -> Result<()> {
         let username = String::from("evanjs");
-        let client = RsClient::new(Some(&username));
+        let client = RsClient::new(Some(username.clone()));
         let profile = client.get_profile(None, 20).await?;
         println!("Profile: {:#?}", &profile);
         assert_eq!(profile.name.to_lowercase(), username.to_lowercase());
@@ -94,7 +94,7 @@ mod tests {
     #[async_std::test]
     async fn test_quests() -> Result<()> {
         let username = String::from("evanjs");
-        let client = RsClient::new(Some(&username));
+        let client = RsClient::new(Some(username.clone()));
         let quests = client.get_quests(None).await?;
         println!("Quests: {:#?}", &quests);
         Ok(())
