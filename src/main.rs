@@ -2,7 +2,7 @@
 extern crate tracing;
 
 use rsrs::RsClient;
-use dotenv;
+
 
 
 use rsq::model::config::Config;
